@@ -222,10 +222,10 @@ local function currencyCheck()
 		payout_chest.condenseItems()
  
 		--Get the amount if items in slot one of the chest
-		slot_one_check_contents = payout_chest.getStackInSlot(1)
+		slot_one_check_contents = payout_chest.getItemDetail(1)
  
 		--Make sure the machine is not out of money and if so, put an error up for the user
-		if slot_one_check_contents == nil then
+		if slot_one_check_contents.count == nil then
 			outOfCurrency(0)
 		end
 end
@@ -285,11 +285,11 @@ while true do
  
 	--Check for deposit
 	deposit_chest.condenseItems()
-	currency = deposit_chest.getStackInSlot(1)
+	currency = deposit_chest.getItemDetails(1)
 	if currency ~= nil then
 		--They paid something!
-		bet_type = currency.id
-		bet_amount = currency.qty
+		bet_type = currency.name
+		bet_amount = currency.bount
 		--The currency is correct now make sure they are betting within the min / max
 		--Check if the bet amount is high / low enough
 		if bet_amount > max_bet then

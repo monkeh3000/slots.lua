@@ -24,29 +24,29 @@ local min_bet = 2
  
 --Currency this machine will accept
 --Display name (what the users will see)
-local accepted_currency = "Diamond"
+local accepted_currency = "Spur"
  
 --Minecraft name. Note: Most items have 2 names, one can be edited (display_name) with the anvil and the other cannot (id). It's
 -- important to 
 -- use the name that cannot be edited here to prevent cheating. Look at the item in a computer craft terminal to 
 -- determine what item name to use.
-local real_currency_name = "minecraft:diamond"
+local real_currency_name = "numatics:spur"
  
 --Image options for the reel (these are files on the computer that controls the slot)
 options = {"pig","sheep","creeper","steve","cow"}
  
 --Chest that the user will deposit currency into so they can play
-deposit_chest = peripheral.wrap("container_chest_0")
+deposit_chest = peripheral.wrap("minecraft:chest_0")
  
 --Chest where the user money goes once they deposit it 
 --collections_chest = peripheral.wrap("container_chest_7")
  
 --Where to push the users deposit for safe keeping
-collections_chest_push_direction = "north"
+collections_chest_push_direction = "minecraft:chest_2"
  
 --Chest where winners can collect their winnings and it's push direction
-payout_chest = peripheral.wrap("container_chest_1")
-payout_chest_push_direction = "west"
+payout_chest = peripheral.wrap("minecraft:chest_1")
+payout_chest_push_direction = "minecraft:chest_3"
  
 --All variables that typically will not be changed by the user are defined here
 local currency = nil
@@ -113,11 +113,11 @@ local function paywinner(winning_amount)
 		payout_chest.condenseItems()
  
 		--Get the amount if items in slot one of the chest
-		slot_one_contents = payout_chest.getStackInSlot(1)
+		slot_one_contents = payout_chest.getItenDetails(1)
  
 		--Make sure the machine is not out of money and if so, put an error up for the user
 		if slot_one_contents ~= nil then
-			slot_one_cnt = slot_one_contents.qty
+			slot_one_cnt = slot_one_contents.count
 		else
 			outOfCurrency(left_to_pay)
 		end

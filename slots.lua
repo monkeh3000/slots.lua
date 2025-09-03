@@ -289,7 +289,7 @@ while true do
 	if currency ~= nil then
 		--They paid something!
 		bet_type = currency.name
-		bet_amount = currency.bount
+		bet_amount = currency.count
 		--The currency is correct now make sure they are betting within the min / max
 		--Check if the bet amount is high / low enough
 		if bet_amount > max_bet then

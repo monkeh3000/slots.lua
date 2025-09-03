@@ -2,13 +2,13 @@
 local create_images = "true"
  
 --Where to send the terminal output
-term.redirect(peripheral.wrap("right"))
+term.redirect(peripheral.wrap("back"))
  
 --Set the background color of the monitor
 term.setBackgroundColor(colors.black)
  
 --Monitor variable
-local mon = peripheral.wrap("right")
+local mon = peripheral.wrap("back")
  
 --Set the text size of the monitor
 mon.setTextScale(0.5)

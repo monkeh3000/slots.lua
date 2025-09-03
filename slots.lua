@@ -30,7 +30,7 @@ local accepted_currency = "Spur"
 -- important to 
 -- use the name that cannot be edited here to prevent cheating. Look at the item in a computer craft terminal to 
 -- determine what item name to use.
-local real_currency_name = "numatics:spur"
+local real_currency_name = "numismatics:spur"
  
 --Image options for the reel (these are files on the computer that controls the slot)
 options = {"pig","sheep","creeper","steve","cow"}
@@ -42,11 +42,11 @@ deposit_chest = peripheral.wrap("minecraft:chest_0")
 --collections_chest = peripheral.wrap("container_chest_7")
  
 --Where to push the users deposit for safe keeping
-collections_chest_push_direction = "minecraft:chest_2"
+collections_chest_push_direction = "minecraft:chest_1"
  
 --Chest where winners can collect their winnings and it's push direction
 payout_chest = peripheral.wrap("minecraft:chest_1")
-payout_chest_push_direction = "minecraft:chest_3"
+payout_chest_push_direction = "minecraft:chest_2"
  
 --All variables that typically will not be changed by the user are defined here
 local currency = nil

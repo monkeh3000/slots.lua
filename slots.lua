@@ -110,7 +110,7 @@ local function paywinner(winning_amount)
 	paid = 0
 	while left_to_pay > 0 do
 		--Condense the chest to fill up slot one
-		payout_chest.condenseItems()
+		--payout_chest.condenseItems()
  
 		--Get the amount if items in slot one of the chest
 		slot_one_contents = payout_chest.getItenDetails(1)
@@ -312,7 +312,7 @@ while true do
 			--Determine what error to display to the user
  
 			--Cheater! Someone tried renaming an item in an anvil to match the currency used on this slot
-			if (currency.display_name == accepted_currency) and (currency.id ~= real_currency_name) then
+			if (tostring(currency.display_name) == accepted_currency) and (currency.id ~= real_currency_name) then
 				center_printing("CHEATER DETECTED")
 				sleep(3)
 			--Wrong currency error
